@@ -21,10 +21,11 @@ URLS = [
     ['í ½í³·', 'https://commons.wikimedia.org', 1],
     ['í ½í°¸', 'http://wikimedia.org.ve', 1]
 ]
+'''
 IMAGES = ['001.jpg', '002.jpg', '003.jpg', '004.jpg', '005.jpg', '006.jpg', 
           '007.jpg', '008.jpg', '009.jpg', '010.jpg', '011.jpg', '012.jpg', 
           '013.jpg', '014.jpg', '015.jpg', '016.jpg']
-
+'''
 def ediciones(chat_id, user):
     msg = 'Ediciones para el usuario ' + user + '\n'
     response = requests.post(
@@ -118,14 +119,14 @@ def command_help(message):
     msg = msg + '/media <TERMINO DE BUSQUEDA>\n'
     msg = msg + '/bajale2\n'
     bot.reply_to(message, msg)
-
+'''
 # Handle /bajale2
 @bot.message_handler(commands=['bajale2'])
 def command_bajale2(message):
     random.shuffle(IMAGES)
     photo = open('bajale2/' + IMAGES[0], 'rb')
     bot.send_photo(message.chat.id, photo)
-
+'''
 
 # Handle /ediciones
 @bot.message_handler(commands=['ediciones'])
